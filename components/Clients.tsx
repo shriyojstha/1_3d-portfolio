@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import { companies, testimonials } from "@/data";
 
@@ -21,8 +23,13 @@ const Clients = () => {
         <div className='flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10'>
           {companies.map(({ id, img, name, nameImg }) => (
             <div key={id} className="flex md:max-w-60 max-w-32 gap-2">
-              <img src={img} alt={img} className="w-5 md:w-10" />
-              <img src={nameImg} alt={name} className="w-20 md:w-24" />
+              <div className="relative w-5 md:w-10 h-5 md:h-10">
+              <Image src={img} alt={img} fill className="object-contain" />
+              </div>
+
+               <div className="relative w-20 md:w-24 h-6 md:h-8">
+              <Image src={nameImg} alt={name} fill className="object-contain" />
+              </div>
             </div>
           ))}
         </div>

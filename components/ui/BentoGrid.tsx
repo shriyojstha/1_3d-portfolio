@@ -71,8 +71,8 @@ export const BentoGridItem = ({
         <div className="w-full h-full absolute">
           {img && (
             <img
-              src={img}
-              alt={img}
+              src={String(img)}
+              alt={String(img)}
               className={cn(imgclassName, " object-cover  object-center")}
             />
           )}
@@ -84,18 +84,14 @@ export const BentoGridItem = ({
         >
           {spareImg && (
             <img
-              src={spareImg}
-              alt={spareImg}
+              src={String(spareImg)}
+              alt={String(spareImg)}
               className="object-cover w-full h-full object-center"
             />
           )}
         </div>
 
-        {id === 6 && (
-          <BackgroundGradientAnimation/>
-            
-         
-        )}
+        {id === 6 && <BackgroundGradientAnimation />}
 
         <div
           className={cn(
@@ -163,11 +159,11 @@ export const BentoGridItem = ({
               </div>
 
               <MagicButton
-              title={copy ? 'Email Copied!!' : 'Copy my Email'}
-              icon={<IoCopyOutline size={22}/>}
-              position="left"
-              otherClasses="bg-[#131a31]"
-              handleClick={handleCopy}
+                title={copy ? "Email Copied!!" : "Copy my Email"}
+                icon={<IoCopyOutline size={22} />}
+                position="left"
+                otherClasses="bg-[#131a31]"
+                handleClick={handleCopy}
               />
             </div>
           )}
